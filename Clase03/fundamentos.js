@@ -14,6 +14,17 @@ const conexionBDD = (datosConexion) => {
     })
 }
 
+const conexionBDDos = async() => {
+    try{
+        const resultado = await conexionBDD(true)
+        console.log(resultado)
+    }catch(error){
+        console.log(error)
+    }
+}
+
+conexionBDDos()
+
 /*conexionBDD(false)
     // Para trabajar con promesas se usa .then y .catch
     .then((respuesta) => {console.log(respuesta)}) // La respuesta es la promesa
@@ -25,14 +36,14 @@ const conexionBDD = (datosConexion) => {
 
     .catch(first = (second) => { third })*/
 
-const obtenerDatos = fetch("https://jsonplaceholder.typicode.com/users") // Fetch devuelve una promesa
+/*const obtenerDatos = fetch("https://jsonplaceholder.typicode.com/users") // Fetch devuelve una promesa
 
 obtenerDatos
     .then(peticion => peticion.json())
 
     .then(respuesta => console.log(respuesta))
 
-    .catch(error => console.log(error))
+    .catch(error => console.log(error))*/
 
 
 /*
@@ -43,3 +54,17 @@ Mecanismos para trabajar con APIs
 3. Axios
 4. React Query
 */
+
+/*const conectarAPI = async() => {
+    try {
+
+        const respuesta = await fetch("https://jsonplaceholder.typicode.com/users")
+        const data = await respuesta.json()
+        console.log(data)
+
+    }catch(error){
+        console.log(error)
+    }
+}
+
+conectarAPI()*/
